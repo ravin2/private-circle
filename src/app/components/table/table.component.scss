@@ -1,0 +1,50 @@
+table {
+  width: 100%;
+  .details-btn {
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: #004570;
+    cursor: pointer;
+  }
+  .selected {
+    color: #004570;
+    height: 34px;
+    border-bottom: 5px solid #004570;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .highlight {
+    background: #f2eded;
+  }
+  ._icon {
+    padding: 5px;
+    color: lightgray;
+  }
+  .selected-icon {
+    color: black !important;
+  }
+  th.mat-header-cell,
+  td.mat-cell,
+  td.mat-footer-cell {
+    padding-right: 10px;
+  }
+  .mat-header-cell {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .list-name {
+    font-size: 18px;
+  }
+  .list-name-blue {
+    color: skyblue;
+  }
+}
+.no-data-text {
+  text-align: center;
+  padding: 25px;
+  margin-top: 20px;
+  color: darkgrey;
+  font-size: 20px;
+  font-weight: 600;
+}

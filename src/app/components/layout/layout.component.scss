@@ -1,0 +1,42 @@
+.header-layout {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  z-index: 10000;
+}
+._layout {
+  display: flex;
+  flex-direction: row;
+  padding-top: 95px !important;
+  .table-layout {
+    width: 70%;
+    max-height: calc(100vh - 100px);
+    overflow: auto;
+    border-right: 1px solid lightgray;
+  }
+  .details-layout {
+    width: 30%;
+    height: calc(100vh - 100px);
+    overflow: auto;
+  }
+  th.mat-header-cell {
+    text-align: left;
+    background: white;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 0px) {
+  ._layout {
+    flex-direction: column;
+  }
+  .table-layout {
+    width: 100% !important;
+    max-height: 75vh !important;
+  }
+  .details-layout {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

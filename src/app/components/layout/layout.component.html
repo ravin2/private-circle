@@ -1,0 +1,16 @@
+
+<div class="header-layout">
+    <app-header (searchKeyToTable)="sendSerchKeyToTable($event)"></app-header>
+</div>
+<div class="_layout">
+    <div class="table-layout">
+        <app-table  
+            (sendDetails)="sendDetails($event)"        
+            [searchKey]="searchKey"
+        ></app-table>
+    </div>
+    <div class="details-layout">
+        <app-details [details]="details"></app-details>
+    </div>
+</div>
+

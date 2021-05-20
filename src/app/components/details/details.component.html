@@ -1,0 +1,13 @@
+<div class="details">
+    <div class="description">
+        No Description Yet. <span class="add-description">+ Add Description</span>
+    </div>
+    <div *ngFor="let company of companyList">
+        <div class="company-name">
+            {{company.companyName}}
+        </div>
+    </div>
+    <div  class="no-data-text" *ngIf="companyList.length == 0">
+        No Data to Show
+    </div>
+</div>

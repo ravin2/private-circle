@@ -1,0 +1,83 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Date Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef sticky="true">Date</th>
+    <td mat-cell *matCellDef="let element">
+      <span *ngIf="element.details.length != 0">      
+        {{ element.date }}
+      </span>
+      <span *ngIf="element.details.length == 0">      
+        <mat-icon 
+          class="material-icons _icon" 
+          [ngClass]="{ 'selected-icon': selectedRowIndex == element.listName }">all_out</mat-icon>
+      </span>
+    </td>
+
+  </ng-container>
+
+  <!-- ListName Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>List Name</th>
+    <td mat-cell *matCellDef="let element" class="list-name"
+      [ngClass]="{ 'list-name-blue': element.details.length == 0 }">
+      {{ element.listName }}
+    </td>
+  </ng-container>
+
+  <!-- Entities Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef>Number of Entities</th>
+    <td mat-cell *matCellDef="let element">{{ element.details.length }}</td>
+  </ng-container>
+
+  <!-- Icon Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element">
+      <span 
+        class="material-icons _icon" 
+        [ngClass]="{ 'selected-icon': selectedRowIndex == element.listName }"> 
+        mail 
+      </span>
+      <span 
+        *ngIf="element.details.length != 0"
+        class="material-icons _icon"
+        [ngClass]="{ 'selected-icon': selectedRowIndex == element.listName }">
+        share 
+      </span>
+      <span
+        *ngIf="element.details.length != 0"
+        class="material-icons _icon" 
+        [ngClass]="{ 'selected-icon': selectedRowIndex == element.listName }"> 
+        mode 
+      </span>
+      <span
+        *ngIf="element.details.length != 0"
+        class="material-icons _icon" 
+        [ngClass]="{ 'selected-icon': selectedRowIndex == element.listName }"> 
+        delete 
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        class="details-btn"
+        (click)="viewDetails(element)"
+        [ngClass]="{ selected: selectedRowIndex == element.listName }"
+      >
+        Details
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr
+    [ngClass]="{ highlight: selectedRowIndex == row.listName }"
+    mat-row
+    *matRowDef="let row; columns: displayedColumns">
+  </tr>
+</table>
+<div class="no-data-text"*ngIf="dataSource.filteredData.length == 0">
+  No Data Found
+</div>

@@ -1,0 +1,29 @@
+<div class="header-flex">
+    <div>
+        <button class="button selected-button">        
+            <mat-icon>list</mat-icon>
+            <div class="text">            
+                SAVED LISTS
+            </div>
+        </button>
+    </div>
+    <div>
+        <button class="button ">  
+            <mat-icon>filter_alt</mat-icon>       
+            <div class="text">           
+                SAVED FILTERS
+            </div>      
+        </button>
+    </div>
+    <div>
+        <button class="button"> 
+            <mat-icon>history</mat-icon>       
+            <div class="text">            
+                SEARCH HISTORY
+            </div>
+        </button>
+    </div>
+    <div class="search-bar-div">
+        <input (keyup)="applyFilter($event)" type="text" class="search-bar-input-box" placeholder="Search">
+    </div>
+</div>
